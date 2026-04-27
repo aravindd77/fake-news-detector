@@ -1,66 +1,57 @@
 📌 Fake News Detection System
 
-A ground-up educational project that implements a Naive Bayes-based text classification system using only core Python concepts. No external machine learning libraries are used, making it a strong demonstration of fundamental ML principles, probability theory, and text processing techniques.
+A ground-up Python project that implements a Naive Bayes–based text classifier from scratch, without using any external machine learning libraries.
+This project focuses on understanding core ML concepts, probability, and text processing through first-principles implementation.
 
 💡 Why This Project
-Demonstrates understanding of core Machine Learning principles without using ML libraries
-Implements Naive Bayes classifier from scratch using probability theory
-Shows ability to process and analyze text data programmatically
-Builds strong foundation for Natural Language Processing (NLP) concepts
-Highlights problem-solving and algorithm design skills
+Demonstrates machine learning fundamentals without libraries
+Implements Naive Bayes classifier manually
+Shows text processing and feature extraction skills
+Applies probability theory to real-world problems
+Highlights clean coding and modular design
 📋 Project Overview
 
-This system classifies news articles as "Fake" or "Real" using a probabilistic approach inspired by the Naive Bayes algorithm.
+This system classifies news articles as:
 
-It demonstrates:
+👉 REAL NEWS ✅
+👉 FAKE NEWS 🚨
 
-Probability theory and conditional probability
-Text preprocessing and feature extraction
-Custom machine learning logic from scratch
-Clean modular Python programming
-Data-driven decision making
+using a probabilistic approach based on Naive Bayes classification.
+
 ⚙️ Tech Stack
-Python (Core)
+Python (Core only)
 Data Structures (Dictionaries, Lists, Sets)
-Probability & Statistics (Naive Bayes concept)
+Probability & Statistics
 Command Line Interface (CLI)
 🎯 Key Features
 1. Custom Naive Bayes Classifier
-Word frequency-based probability calculation
-Conditional probability estimation P(word | category)
-Laplace smoothing to handle unseen words
-Log probability for numerical stability
+Word frequency–based learning
+Conditional probability: P(word | class)
+Laplace smoothing for unseen words
+Log probabilities for stability
 2. Text Preprocessing Pipeline
 Lowercase conversion
 Punctuation removal
-Tokenization (word splitting)
-Stopword removal using custom list
-3. Classification with Insights
-Binary classification: Real or Fake
-Confidence score for predictions
-Explanation of important contributing words
-Transparent reasoning for results
-4. Interactive CLI System
-Train model on dataset
+Tokenization
+Stopword removal (custom implementation)
+3. Intelligent Classification Output
+Predicts REAL / FAKE
+Confidence score
+Shows top contributing words
+Transparent reasoning
+4. Interactive CLI
 Test custom news input
 View word statistics
-Save/load trained model
-Easy menu-driven interface
-5. Model Persistence
-Save trained model using JSON
-Load previously trained models
-No external serialization libraries used
+Batch test from file
+Simple menu-driven interface
 📁 Project Structure
 fake-news-detector/
-├── main.py                 # Entry point and CLI interface
-├── classifier.py           # High-level classification logic
-├── model.py               # Naive Bayes implementation
-├── text_preprocess.py     # Text cleaning & preprocessing
-├── utils.py               # Helper functions
+├── main.py
+├── text_preprocess.py
 ├── data/
-│   ├── real_news.txt      # Training data (real articles)
-│   └── fake_news.txt      # Training data (fake articles)
-└── README.md              # Project documentation
+│   ├── real_news.txt
+│   └── fake_news.txt
+├── README.md
 🚀 Getting Started
 Prerequisites
 Python 3.7+
@@ -68,89 +59,80 @@ Run the Project
 cd fake-news-detector
 python main.py
 📖 How It Works
-1. Training Phase
-Input: Labeled dataset (real & fake news)
-Process:
-Clean and tokenize text
-Remove stopwords
-Build word frequency dictionary
-Compute prior probabilities
-Output: Trained probabilistic model
-2. Prediction Phase
-
-For a new article:
-
+🔹 Training Phase
+Load real & fake datasets
 Preprocess text
-Compute probability for each class:
+Build word frequency dictionaries
+Calculate probabilities
+🔹 Prediction Phase
+
+For a new input:
+
+Preprocess input text
+Compute probabilities for:
 Real
 Fake
-Apply Naive Bayes formula:
+Apply Naive Bayes:
 P(class | text) ∝ P(class) × Π P(word | class)
-Use log probabilities to avoid underflow
-Choose class with highest score
+Choose class with highest probability
 📊 Example Output
 Input:
-Government announces new healthcare initiative for public welfare
+Government announces new healthcare initiative
 Output:
-Prediction: REAL
-Confidence: 87.3%
+Prediction: REAL NEWS ✅
+Confidence: 0.87
 
-Top contributing words:
-- government
-- announces
-- healthcare
+Reason:
+- 'government' strongly indicates REAL
+- 'announces' strongly indicates REAL
 Input:
-Aliens secretly found living under pyramid structures worldwide
+Aliens secretly found living underground
 Output:
-Prediction: FAKE
-Confidence: 94.1%
+Prediction: FAKE NEWS 🚨
+Confidence: 0.94
 
-Top contributing words:
-- aliens
-- secretly
-- pyramid
+Reason:
+- 'aliens' strongly indicates FAKE
+- 'secretly' strongly indicates FAKE
 🧠 Algorithm Summary
-Uses Naive Bayes classification
-Assumes independence between words
-Applies Laplace smoothing for unseen words
-Uses log probabilities for numerical stability
+Naive Bayes classification
+Assumes word independence
+Uses Laplace smoothing
+Uses log probabilities
 📈 Performance Notes
-Fast execution due to dictionary-based computation
-Accuracy depends on quality and size of dataset
-Lightweight memory usage
-Scalable with larger datasets
+Fast due to dictionary-based computation
+Accuracy depends on dataset quality
+Lightweight and efficient
 🔒 Limitations
-Assumes word independence (Naive assumption)
-Limited dataset size affects accuracy
-No deep contextual understanding
-Works only on English text
-Simple frequency-based features only
+Assumes independence between words
+Small dataset → limited accuracy
+No deep semantic understanding
+English-only support
 🚀 Future Improvements
-Implement TF-IDF weighting
-Add n-gram (bigram/trigram) support
-Improve dataset size and diversity
-Build web interface using Flask
-Add real-time news scraping
-Introduce sentiment analysis
-📌 Project Status
-
-Completed as an educational implementation of Naive Bayes classification from scratch.
-Currently focused on improving dataset quality and expanding features.
-
+TF-IDF weighting
+N-grams (bigrams/trigrams)
+Larger dataset
+Web interface (Flask)
+Real-time news analysis
 🎓 Learning Outcomes
 
-This project helped in understanding:
+This project demonstrates:
 
-Probability and Bayes’ theorem
+Probability & Bayes’ theorem
 Text preprocessing techniques
-Feature extraction from raw text
+Feature extraction
 Algorithm design from scratch
-Modular Python programming
-Basics of Natural Language Processing
-📄 License
+Core NLP fundamentals
+📌 Project Status
 
-This is an educational project created for learning purposes. Free to use and modify.
+✅ Completed core implementation
+🔄 Open for future improvements
 
 🎉 Conclusion
 
-This project demonstrates that machine learning concepts can be implemented from first principles using only Python. It focuses on understanding how ML works internally, rather than relying on external libraries.
+This project shows that machine learning systems can be built from first principles using only Python.
+It emphasizes understanding over dependency, making it a strong foundation for advanced ML and NLP work.
+
+📄 License
+
+Educational use — free to modify and extend.
